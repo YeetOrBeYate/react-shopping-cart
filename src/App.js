@@ -7,35 +7,35 @@ import Navigation from './components/Navigation';
 import Products from './components/Products';
 import ShoppingCart from './components/ShoppingCart';
 
-function App() {
-	const [products] = useState(data);
-	const [cart, setCart] = useState([]);
+//Context component and context itself
+import {ProductContext} from "./Contexts/ProductContext";
+import {PContext} from "./Contexts/ProductContext";
 
-	const addItem = item => {
-		// add the given item to the cart
-		setCart((cart)=>[...cart, item])
-	};
+function App() {
+	
 
 	return (
 		<div className="App">
-			<Navigation cart={cart} />
+			<ProductContext>
 
-			{/* Routes */}
-			<Route
-				exact
-				path="/"
-				render={() => (
-					<Products
-						products={products}
-						addItem={addItem}
-					/>
-				)}
-			/>
+			
+				<Navigation />
 
-			<Route
-				path="/cart"
-				render={() => <ShoppingCart cart={cart} />}
-			/>
+				{/* Routes */}
+				<Route
+					exact
+					path="/"
+					render={() => (
+						<Products
+						/>
+					)}
+				/>
+
+				<Route
+					path="/cart"
+					render={() => <ShoppingCart />}
+				/>
+			</ProductContext>
 		</div>
 	);
 }
