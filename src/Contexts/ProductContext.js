@@ -16,9 +16,9 @@ export const ProductContext = (props) =>{
     };
 
     const RemoveItem = id =>{
-        setCart((cart)=>{ return cart.map((car, index)=>{
+        setCart((cart)=>{ return cart.filter((car, index)=>{
             if(index !==id){
-                console.log(cart)
+                console.log("length",cart.length)
                 return car;
                 
             }
