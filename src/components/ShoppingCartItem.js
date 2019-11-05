@@ -1,6 +1,7 @@
 import React from 'react';
-
+import {PContext} from "../Contexts/ProductContext"
 const Item = props => {
+	const {RemoveItem} = React.useContext(PContext)
 	return (
 		<div className="shopping-cart_item">
 			<img src={props.image} alt={`${props.title} book`} />
@@ -9,7 +10,8 @@ const Item = props => {
 			<div>
 				<h1>{props.title}</h1>
 				<p>$ {props.price}</p>
-				<button>Remove from cart</button>
+				<button onClick={()=>RemoveItem(props.index)}>Remove from cart</button>
+				{console.log(props.index)}
 			</div>
 		</div>
 	);

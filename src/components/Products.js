@@ -15,7 +15,6 @@ const Products = props => {
 				<Product
 					key={product.id}
 					product={product}
-					addItem={props.addItem}
 				/>
 			))}
 		</div>
