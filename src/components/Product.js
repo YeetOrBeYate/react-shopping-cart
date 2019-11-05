@@ -1,8 +1,8 @@
 import React from 'react';
-import {PContext} from "../Contexts/ProductContext"
+import { YeetContext } from '../Contexts/YeetContext';
 
 const Product = props => {
-	const {addItem} = React.useContext(PContext)
+	const {addItem} = React.useContext(YeetContext)
 	return (
 		<div className="product">
 			<img src={props.product.image} alt={`${props.product.title} book`} />

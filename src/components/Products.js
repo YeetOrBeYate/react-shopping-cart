@@ -4,10 +4,10 @@ import React from 'react';
 import Product from './Product';
 
 //context
-import {PContext} from "../Contexts/ProductContext"
+import {YeetContext} from "../Contexts/YeetContext"
 
 const Products = props => {
-	const {products, addItem} = React.useContext(PContext)
+	const {products} = React.useContext(YeetContext)
 
 	return (
 		<div className="products-container">

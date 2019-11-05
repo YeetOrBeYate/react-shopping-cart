@@ -1,6 +1,6 @@
 import React, {createContext, useState} from 'react';
 import data from "../data"
-import { arrayExpression } from '@babel/types';
+
 export const PContext = createContext();
 
 
@@ -24,9 +24,7 @@ export const ProductContext = (props) =>{
             }
         })})
     }
-        
-    
-    
+
     return(
         <PContext.Provider value ={{products, cart, RemoveItem, addItem}}>
             {props.children}

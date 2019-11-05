@@ -1,10 +1,10 @@
 import React from 'react';
-import {PContext} from "../Contexts/ProductContext"
 // Components
 import Item from './ShoppingCartItem';
+import { CartContext } from '../Contexts/CartContext';
 
 const ShoppingCart = () => {
-	const {cart} = React.useContext(PContext)
+	const {cart} = React.useContext(CartContext)
 	const getCartTotal = () => {
 		return cart.reduce((acc, value) => {
 			return acc + value.price;
