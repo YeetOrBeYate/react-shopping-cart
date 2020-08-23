@@ -1,6 +1,8 @@
 import React from 'react';
+import { YeetContext } from '../Contexts/YeetContext';
 
 const Product = props => {
+	const {addItem} = React.useContext(YeetContext)
 	return (
 		<div className="product">
 			<img src={props.product.image} alt={`${props.product.title} book`} />
@@ -9,7 +11,7 @@ const Product = props => {
 
 			<p className="price">${props.product.price}</p>
 
-			<button onClick={() => props.addItem(props.product)}>
+			<button onClick={() => addItem(props.product)}>
 				Add to cart
 			</button>
 		</div>
